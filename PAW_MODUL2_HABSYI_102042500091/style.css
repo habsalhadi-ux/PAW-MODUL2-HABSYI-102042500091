@@ -1,0 +1,293 @@
+/* =========================================
+   RESET & GLOBAL STYLES
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+main {
+    max-width: 98%; 
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+/* =========================================
+   UTILITIES (Label & Pesan)
+   ========================================= */
+.label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #95a5a6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.pesan {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.kesalahan {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* =========================================
+   BUTTONS UMUM (Tambah, Simpan, dll)
+   ========================================= */
+button, .tombol {
+    display: inline-block;
+    background-color: #2c3e50; 
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+}
+
+button:hover, .tombol:hover {
+    background-color: #1a252f;
+}
+
+button.merah {
+    background-color: #e74c3c;
+}
+
+button.merah:hover {
+    background-color: #c0392b;
+}
+
+/* =========================================
+   FORMS
+   ========================================= */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+input:not([type="submit"]):not([type="button"]) {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 18px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.15);
+}
+
+/* Form Pencarian Inline (Sejajar Sempurna) */
+form.pencarian {
+    padding: 0;
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+form.pencarian label {
+    width: 100%;
+    margin-bottom: -5px; 
+}
+
+form.pencarian input {
+    width: auto;
+    flex-grow: 1;
+    margin-bottom: 0;
+    max-width: 400px;
+    height: 42px; 
+}
+
+form.pencarian button {
+    margin-bottom: 0;
+    height: 42px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form.pencarian a {
+    color: #2c3e50;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* =========================================
+   DAFTAR MOBIL (GRID LAYOUT)
+   ========================================= */
+.daftar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.daftar article {
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    padding: 25px; 
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.daftar article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.daftar article h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.daftar article p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 15px;
+}
+
+.daftar article p:last-of-type {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: auto; 
+}
+
+/* =========================================
+   TOMBOL AKSI PADA KARTU (DETAIL, EDIT, HAPUS)
+   ========================================= */
+
+/* Kita mentarget 3 tag `a` terakhir di dalam article untuk dijadikan tombol kecil menyamping */
+.daftar article a:nth-last-of-type(1),
+.daftar article a:nth-last-of-type(2),
+.daftar article a:nth-last-of-type(3) {
+    display: inline-block !important;
+    width: auto !important;
+    font-size: 13px !important;       
+    padding: 7px 16px !important;     
+    border-radius: 5px !important;
+    margin-right: 8px !important;     
+    margin-top: 5px !important;
+    margin-bottom: 0 !important; 
+    font-weight: 600 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.daftar article a:nth-last-of-type(1):hover,
+.daftar article a:nth-last-of-type(2):hover,
+.daftar article a:nth-last-of-type(3):hover {
+    opacity: 0.85;
+    transform: translateY(-2px); 
+}
+
+/* 1. Tombol Hapus (Urutan ke-3 dari bawah) -> Warna Merah Elegan */
+.daftar article a:nth-last-of-type(1) {
+    background-color: #e74c3c !important; 
+}
+
+/* 2. Tombol Edit (Urutan ke-2 dari bawah) -> Warna Hijau Teal / Emerald Segar */
+.daftar article a:nth-last-of-type(2) {
+    background-color: #16a085 !important; 
+}
+
+/* 3. Tombol Detail (Urutan terakhir dari bawah) -> Warna Biru Modern / Indigo */
+.daftar article a:nth-last-of-type(3) {
+    background-color: #2980b9 !important; 
+}
+
+/* =========================================
+   DETAIL DATA (dl, dt, dd)
+   ========================================= */
+dl {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 15px 10px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e8ed;
+    margin-bottom: 25px;
+}
+
+dt {
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+dd {
+    margin: 0;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+main > a {
+    margin-right: 15px;
+    font-weight: 600;
+}
